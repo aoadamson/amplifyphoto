@@ -1,0 +1,33 @@
+{
+	"auth": {
+		"amplifyphoto1944ce51": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"amplifyphoto": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authamplifyphoto1944ce51"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"s3ce1623b7": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
